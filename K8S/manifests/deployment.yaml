@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myresume
+spec:
+  selector:
+    matchLabels:
+      app: myresume
+  template:
+    metadata:
+      labels:
+        app: myresume
+    spec:
+      containers:
+      - name: myresume
+        image: shruti1505/myresume:{{ .Values.image.tag }}
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

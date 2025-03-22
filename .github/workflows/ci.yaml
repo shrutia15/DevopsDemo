@@ -47,6 +47,7 @@ jobs:
         run: |
           sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/myresume-chart/values.yaml
 
+          
       - name: Commit and push changes
         run: |
           git config --global user.email "shruti.awate1502@gmail.com"
